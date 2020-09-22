@@ -13,34 +13,41 @@ const styles = StyleSheet.create({
         width: '100%',
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between',
-        paddingVertical: 5
-    },
-    arrowButton: {
-        paddingHorizontal: 10
+        justifyContent: 'center',
+        paddingVertical: 5,
     },
     title: {
         color: 'grey',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        textTransform: 'capitalize'
+    },
+    weekContainer:{
+        flexDirection: 'row'
+    },
+    arrowButton: {
+        paddingHorizontal: 5,
+        fontSize: 18,
+        alignSelf: 'center'
     },
     week: {
-        width: '100%',
+        width: '80%',
         borderBottomColor: 'grey',
         borderBottomWidth: StyleSheet.hairlineWidth,
-        paddingVertical: 5
+        paddingVertical: 5,
     },
     weekdayLabelContainer: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom: 10
+        marginBottom: 2
     },
     weekdayLabel: {
         flex: 1,
-        alignItems: 'center'
+        alignItems: 'center',
     },
     weekdayLabelText: {
-        color: 'grey'
+        color: 'grey',
+        textTransform: 'capitalize'
     }, 
     weekdayNumberContainer: {
         flexDirection: 'row',
