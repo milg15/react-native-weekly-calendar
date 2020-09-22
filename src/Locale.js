@@ -12,6 +12,10 @@ export const applyLocale = (locale, setCancelText, setConfirmText) => {
             setCancelText('取消')
             setConfirmText('确定')
             break
+        case 'es': 
+            setCancelText('Cancelar')
+            setConfirmText('Confirmar')
+            break
         default:
             setCancelText('Cancel')
             setConfirmText('Confirm')
@@ -24,6 +28,8 @@ export const displayTitleByLocale = (locale, selectedDate, format) => {
 
     switch (locale) {
         case 'en': 
+            return selectedDate.clone().format('MMMM YYYY')
+        case 'es': 
             return selectedDate.clone().format('MMMM YYYY')
         case 'ko':
             return selectedDate.clone().format('YYYY년 M월')
