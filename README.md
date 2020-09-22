@@ -2,7 +2,9 @@
 [![Version](https://img.shields.io/npm/v/react-native-weekly-calendar.svg)](https://www.npmjs.com/package/react-native-weekly-calendar)
 [![Downloads](https://img.shields.io/npm/dm/react-native-weekly-calendar.svg)](https://www.npmjs.com/package/react-native-weekly-calendar)
 
-React Native Weekly Calendar component with customization
+React Native Weekly Calendar component with customization. 
+
+This is a fork I will add the Spanish language and some change is the header i need.
 
 ## Installation
 ```bash
