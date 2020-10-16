@@ -18,6 +18,7 @@ const WeeklyCalendar = props => {
     const [confirmText, setConfirmText] = useState('')
     const [isLoading, setLoading] = useState(false)
     const [eventMap, setEventMap] = useState(undefined)
+    const [events, setEvents] = useState(undefined)
     const [scheduleView, setScheduleView] = useState(undefined)
     const [dayViewOffsets, setDayViewOffsets] = useState(undefined)
     const scrollViewRef = useRef()
@@ -25,8 +26,27 @@ const WeeklyCalendar = props => {
     useEffect(() => { // only first mount
         applyLocale(props.locale, cancelText => setCancelText(cancelText), confirmText => setConfirmText(confirmText))
         createEventMap(props.events)
+        setEvents(props.events)
         setCalendarReady(true)
     }, [])
+
+    useEffect(()=>{
+        if (events!==undefined && props.events!= undefined){
+            if (isEqual(props.events, events)){
+                console.log("equal")
+            }
+            else {
+                createEventMap(props.events)
+                setEvents(props.events)
+                setCalendarReady(true)
+                console.log(props.events, "not equal");
+            }
+        }
+    }, )
+
+    const isEqual = (value, other) => (
+        Object.entries(value).toString() === Object.entries(other).toString()
+    )
 
     const createEventMap = events => {
         let dateMap = new Map()
@@ -362,7 +382,9 @@ WeeklyCalendar.propTypes = {
     /** Set text style of calendar title */
     titleStyle: PropTypes.any,
     /** Set text style of weekday labels */
-    dayLabelStyle: PropTypes.any
+    dayLabelStyle: PropTypes.any,
+    /** Set loading state */
+    forceLoading: PropTypes.any,
 };
 
 WeeklyCalendar.defaultProps = { // All props are optional
